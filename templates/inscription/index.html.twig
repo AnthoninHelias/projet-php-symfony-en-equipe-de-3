@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InscriptionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bienvenu sur la page D'inscription</h1>
+
+    Veuillez entrer vos coordonnées:
+
+        <form action="/">
+        <div>
+        <label>Nom</label>
+        <input type="text" id="nom" name="nom">
+</div><div>
+        <label>Prenom</label>
+        <input type="text" id="prenom" name="prenom">
+    </div><div>
+        <label>Email</label>
+        <input type="email" id="mail" name="mail">
+    </div>
+        <input type="submit" value="Inscription">
+
+        </form>
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gerant{% endblock %}
+
+{% block body %}
+    <h1>Gerant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gerant.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomutilisateur</th>
+                <td>{{ gerant.nomutilisateur }}</td>
+            </tr>
+            <tr>
+                <th>Motdepasse</th>
+                <td>{{ gerant.motdepasse }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ gerant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ gerant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ gerant.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Datedenaissance</th>
+                <td>{{ gerant.datedenaissance ? gerant.datedenaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ gerant.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Codepostal</th>
+                <td>{{ gerant.codepostal }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ gerant.ville }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ gerant.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_gerant_index') }}">back to list</a>
+
+    <a href="{{ path('app_gerant_edit', {'id': gerant.id}) }}">edit</a>
+
+    {{ include('gerant/_delete_form.html.twig') }}
+{% endblock %}

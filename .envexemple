@@ -1,0 +1,17 @@
+###> symfony/framework-bundle ###
+APP_ENV=dev
+APP_SECRET=e657e01a95bdc3c8bfcde5d8a467e1ba
+###< symfony/framework-bundle ###
+
+###> symfony/webapp-pack ###
+MESSENGER_TRANSPORT_DSN=doctrine://default?auto_setup=0
+###< symfony/webapp-pack ###
+
+###> doctrine/doctrine-bundle ###
+DATABASE_URL="mysql://id:mdp@127.0.0.1:3306/nombdd?serverVersion=5.7&charset=utf8mb4"
+###< doctrine/doctrine-bundle ###
+
+###> symfony/mailer ###
+MAILER_DSN=
+# MAILER_DSN=null://null
+###< symfony/mailer ###

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gerant index{% endblock %}
+
+{% block body %}
+    <h1>Gerant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomutilisateur</th>
+                <th>Motdepasse</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Sexe</th>
+                <th>Datedenaissance</th>
+                <th>Adresse</th>
+                <th>Codepostal</th>
+                <th>Ville</th>
+                <th>Telephone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gerant in gerants %}
+            <tr>
+                <td>{{ gerant.id }}</td>
+                <td>{{ gerant.nomutilisateur }}</td>
+                <td>{{ gerant.motdepasse }}</td>
+                <td>{{ gerant.nom }}</td>
+                <td>{{ gerant.prenom }}</td>
+                <td>{{ gerant.sexe }}</td>
+                <td>{{ gerant.datedenaissance ? gerant.datedenaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ gerant.adresse }}</td>
+                <td>{{ gerant.codepostal }}</td>
+                <td>{{ gerant.ville }}</td>
+                <td>{{ gerant.telephone }}</td>
+                <td>
+                    <a href="{{ path('app_gerant_show', {'id': gerant.id}) }}">show</a>
+                    <a href="{{ path('app_gerant_edit', {'id': gerant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_gerant_new') }}">Create new</a>
+{% endblock %}

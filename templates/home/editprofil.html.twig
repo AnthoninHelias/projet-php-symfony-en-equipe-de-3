@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AUT'O - Modification du profil de {{ app.user.prenom }}{% endblock %}
+
+{% block body %}
+    <!-- Axentix CSS minified version -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.2.1/dist/axentix.min.css">
+    <div class="grix xs4 container">
+        <div class="col-xs4">
+            <h1>Modification du profil de {{ app.user.prenom }} {{ app.user.nom }}</h1>
+            {{ form(form) }}
+        </div>
+
+    </div>
+{% endblock %}
